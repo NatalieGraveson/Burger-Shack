@@ -10,7 +10,7 @@ namespace BurgerShack
     {
 
       App app = new App();
-      bool playing = true
+      bool playing = true;
       Console.WriteLine("Welcome to the Best Burger Shack");
 
 
@@ -21,6 +21,7 @@ namespace BurgerShack
       {
         return;
       }
+
       while (playing)
       {
 
@@ -36,35 +37,29 @@ namespace BurgerShack
         if (category != "burgers")
         {
           System.Console.WriteLine("invalid Item. Please try again");
+          continue;
         }
-        else
+        app.PrintBurgers();
+        System.Console.WriteLine("Please select number: ");
+        string selection = Console.ReadLine();
+        int select;
+        if (!Int32.TryParse(selection, out select) || selection < // length of ...)
         {
-          app.PrintBurgers();
-          System.Console.WriteLine("Please select number: ");
-          string selection = Console.ReadLine();
-          int select;
-          if (!Int32.TryParse(selection, out select))
-          {
-            System.Console.WriteLine("That is not a number...");
-            continue;
-          }
+
+          System.Console.WriteLine("That is not a number...");
+          continue;
         }
+        //run my order function;
+        System.Console.WriteLine("Your order has been placed, Would you like to order something else?");
+        string choice = Console.ReadLine().ToLower();
+        if (choice == "no")
+        {
+          return;
+        }
+        continue;
       }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     }
   }
-}
+
+
+

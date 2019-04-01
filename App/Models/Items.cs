@@ -7,8 +7,9 @@ namespace BurgerShack.Models
     public decimal Price { get; set; }
 
 
-    public void Purchase()
+    public decimal Purchase()
     {
+      return Price;
 
     }
 
